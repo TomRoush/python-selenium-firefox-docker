@@ -5,6 +5,7 @@ on:
 
 jobs:
   docker:
+    name: Docker Build
     runs-on: ubuntu-latest
     steps:
       -
@@ -19,7 +20,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: false
-          tags: tomroush/python-selenium-firefox:latest
+          tags: tomroush/python-selenium-firefox-docker:latest
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
